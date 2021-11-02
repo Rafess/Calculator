@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="reset.css">
+    <title>Aula 1 - DOM</title>
+</head>
+<body class="body">
+    <main class="main-content">
+        <h1 class="main-title">Calculadora</h1>
+        <p class="main-paragraph">Para realizar uma operação insira o primeiro número e clique no operador desejado, após repita o processo.</p>
+        <form class="main-form"action="" method="get">
+            <div class="input-div">
+                <input type="text" id="equals" placeholder="Ex: 3">
+                <div id="total">
+                        <span class="main-span">
+                            0
+                        </span> 
+                </div>
+            </div>
+            <div id="operators-division">
+                <button class="operator-buttons" type="button" onclick="calculate('+')">+</button>
+                <button class="operator-buttons" type="button" onclick="calculate('-')">-</button> 
+                <button class="operator-buttons" type="button" onclick="calculate('*')">X</button>
+                <button class="operator-buttons" type="button" onclick="calculate('/')">÷</button> 
+            
+            </div>            
+        </form>
+    </main>
+    <script>
+        // const button = document.querySelector("#enter");
+        let number =  document.querySelector("input[id='equals']");
+        let form = document.querySelector("form")
+        let total = document.querySelector("span");
+        // button.addEventListener('click', function (number){
+        //    total.texContent = parseInt(total.innerText) + parseInt(number.value)
+        //     form.reset()})
+        function calculate(operator) {
+            if (operator === "+") {
+                total.textContent = parseInt(total.innerText) + parseInt(number.value)
+                form.reset()
+            }
+            if (operator === "-") {
+                total.textContent = parseInt(total.innerText) - parseInt(number.value)
+                form.reset()
+            }
+            if (operator === "*") {
+                total.textContent = parseInt(total.innerText) * parseInt(number.value)
+                form.reset()
+            }
+            if (operator === "/") {
+                total.textContent = parseInt(total.innerText) / parseInt(number.value)
+                form.reset()
+            }
+        }
+    </script>
+</body>
+</html>
