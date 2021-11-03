@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="reset.css">
-    <title>Aula 1 - DOM</title>
+    <title>Calculadora Rafael de Oliveira</title>
 </head>
 <body class="body">
     <main class="main-content">
@@ -34,53 +34,6 @@
                 <h2 class="history-title">Histórico de Operações:</h2>
         </section>
     </main>
-    <script>
- const number =  document.querySelector("input[id='equals']");
- const form = document.querySelector("form")
- const total = document.querySelector("span");
- const history = document.createElement("ul");
- const historyDiv = document.querySelector("section");
- let firstNumber;      
- function calculate(operator) {
-     if (operator === "+") {
-        firstNumber = total.innerText
-        total.textContent = parseInt(total.innerText) + parseInt(number.value)
-         storeOperations(operator);
-         form.reset()
-     }
-     if (operator === "-") {
-        firstNumber = total.innerText
-         total.textContent = parseInt(total.innerText) - parseInt(number.value)
-         storeOperations(operator);
-         form.reset()
-     }
-     if (operator === "*") {
-        firstNumber = total.innerText
-         total.textContent = parseInt(total.innerText) * parseInt(number.value)
-         storeOperations(operator);
-         form.reset()
-     }
-     if (operator === "/") {
-        firstNumber = total.innerText
-         total.textContent = parseInt(total.innerText) / parseInt(number.value);
-         storeOperations(operator);
-         form.reset()
-     }
- }
- function clearTotal() {
-    total.textContent = 0;
-}
-function showHistory() {
-    historyDiv.appendChild(history)
-}
-
-function storeOperations(operator) {
-    let operations = [];
-    operations = [...operations, `${firstNumber} ${operator} ${number.value} = ${total.textContent}`];
-    for (const element of operations) {
-        history.innerHTML += `<li class="operation-stored"> ${element} </li>`;
-    }
-}
-    </script>
+    <script src="index.js"></script>
 </body>
 </html>
